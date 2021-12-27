@@ -7,8 +7,7 @@ import theme from '../../styles/theme';
 export function generateInterval(start: DayProps, end: DayProps) {
   let interval: MarkedDateProps = {};
   
-  // eachDayOfInterval({ start: parseISO(start.dateString), end: parseISO(end.dateString)})
- const test =  eachDayOfInterval({ start: new Date(start.timestamp), end: new Date(end.timestamp)})
+  eachDayOfInterval({ start: new Date(start.timestamp), end: new Date(end.timestamp)})
  .forEach(( item ) => {
     const date = format(getPlataformDate(item), 'yyyy-MM-dd' );
 

@@ -68,7 +68,7 @@ export const Price = styled.Text`
   text-transform: uppercase;
 `;
 
-export const Accesories = styled.View`
+export const Accessories = styled.View`
   width: 100%;
   flex-direction: row;
   flex-wrap: wrap;

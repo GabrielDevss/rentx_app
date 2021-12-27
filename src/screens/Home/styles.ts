@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import {  RFValue } from 'react-native-responsive-fontsize';
+import { RFValue } from 'react-native-responsive-fontsize';
 import { FlatList, FlatListProps } from 'react-native';
 import { CarDTO } from '../../dtos/CarsDTO';
 
@@ -37,6 +37,5 @@ export const CarList = styled(
     padding: 24
   },
   showVerticalScrollIndicator: false
-})`
- 
-`;
+})``;
+

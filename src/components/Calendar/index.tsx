@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Calendar as CustomCalendar,
   LocaleConfig,
-  DateCallbackHandler
+  CalendarProps
 } from 'react-native-calendars';
 import { generateInterval } from './generateInterval';
 import { Feather } from '@expo/vector-icons';
@@ -28,10 +28,6 @@ interface DayProps {
   timestamp: number;
 }
 
-interface CalendarProps {
-  markedDates: MarkedDateProps;
-  onDayPress: DateCallbackHandler
-}
 
  function Calendar({ markedDates, onDayPress }: CalendarProps) {
   const theme = useTheme();

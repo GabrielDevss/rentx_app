@@ -7,7 +7,8 @@ interface ImageIndexProps {
 
 export const Container = styled.View`
  width: 100%;
- margin-top: 18px;
+ margin-top: 16px;
+ 
 `;
 
 export const ImageIndexes = styled.View`
@@ -29,7 +30,7 @@ export const ImageIndex = styled.View<ImageIndexProps>`
 
 export const CarImageWrapper = styled.View`
   width: ${Dimensions.get('window').width}px;
-  height: 132px;
+  height: 85px;
 
   align-items: center;
   justify-content: center;
