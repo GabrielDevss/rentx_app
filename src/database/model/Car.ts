@@ -13,14 +13,14 @@ class Car extends Model {
   @field('about')
   about!: string;
   
+  @field('fuel_type')
+  fuel_type!: string;
+  
   @field('period')
   period!: string;
   
   @field('price')
   price!: number;
-  
-  @field('fuel_type')
-  fuel_type!: string;
 
   @field('thumbnail')
   thumbnail!: string;

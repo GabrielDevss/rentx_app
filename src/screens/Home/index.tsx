@@ -35,11 +35,13 @@ export function Home() {
   async function offlineSynchronize() {
     await synchronize({
       database,
-      pullChanges: async ({ lastPulledAt }) => {
+      pullChanges: async ({ lastPulledAt }) => {  
         const response = await api
         .get(`cars/sync/pull?lastPulledVersion=${lastPulledAt || 0} `);
 
         const { changes, lastPulledVersion } = response.data;
+        console.log('#### changes ###');  
+        console.log(changes);
         return { changes, timestamp: lastPulledVersion }
       },
       pushChanges: async ({ changes }) => {
@@ -54,7 +56,6 @@ export function Home() {
     
     async function fetchCars() {
       try {
-        // const response = await api.get('/cars');
         const carCollection = database.get<ModelCar>('cars');
         const cars = await carCollection.query().fetch();
 
@@ -77,6 +78,12 @@ export function Home() {
     }
   }, []);
 
+  useEffect(() => {
+    if(netInfo.isConnected === true) {
+      offlineSynchronize();
+    }
+  },[netInfo.isConnected])
+
   return (
     <Container>
       <StatusBar
@@ -95,8 +102,6 @@ export function Home() {
           }
         </HeaderContent>
       </Header>
-
-      <Button title='sincronizar' onPress={offlineSynchronize} />
 
       {isLoading ? <LoadAnimated /> :
 

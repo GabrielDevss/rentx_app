@@ -50,5 +50,7 @@
     "react-native-svg-transformer": "^0.14.3",
     "typescript": "~4.3.5"
   },
-  "private": true
+  "private": true,
+  "name": "rentx",
+  "version": "1.0.0"
 }
